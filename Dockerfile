@@ -8,6 +8,6 @@ ADD . /app
 
 RUN node --version && \
   npm --version && \
-  echo Installed app keralty-ms-full!!!
+  echo Installed app keralty-ms-full
 
 CMD DEBUG=microservicios:* npm start
