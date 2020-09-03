@@ -1,13 +1,15 @@
 FROM oraclelinux:7-slim
 
+RUN  yum -y install oracle-release-el7 oracle-nodejs-release-el7 && \
+     yum-config-manager --disable ol7_developer_EPEL && \
+     yum -y install oracle-instantclient19.3-basiclite nodejs && \
+     rm -rf /var/cache/yum
+
 WORKDIR /myapp
-
-COPY package.json /app
-COPY package-lock.json /app
-
-# RUN node --version && \ npm --version && \ 
-#echo Installed app keralty-ms-full
 COPY ./ /myapp/
+RUN npm install && \
+    npm run build
 
-#CMD DEBUG=microservicios:* npm start
-#echo Docker ejecutado correctamente
+EXPOSE 8080
+
+CMD exec node dist/index.js
