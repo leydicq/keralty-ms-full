@@ -9,6 +9,4 @@ WORKDIR /myapp
 COPY ./ /myapp/
 RUN npm install
 
-EXPOSE 8080
-
-CMD exec node dist/index.js
+CMD DEBUG=microservicios:* npm start
