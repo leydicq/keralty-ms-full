@@ -5,10 +5,10 @@ RUN  yum -y install oracle-release-el7 oracle-nodejs-release-el7 && \
      yum -y install oracle-instantclient19.3-basiclite nodejs && \
      rm -rf /var/cache/yum
 
-WORKDIR /app
-COPY package.json /app
-COPY package-lock.json /app
-COPY ./ /app/
+WORKDIR /myapp
+COPY package.json /myapp
+COPY package-lock.json /myapp
+COPY ./ /myapp/
 RUN npm install
 
 CMD DEBUG=microservicios:* npm start
