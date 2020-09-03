@@ -16,8 +16,7 @@ RUN yum -y install oracle-release-el7 oracle-nodejs-release-el7 && \
   rm -rf /var/cache/yum && \
   node --version && \
   npm --version && \
-  npm install express-generator && \
-  npm install oracledb
+  npm install
   
-COPY ./ /app
+COPY ./ /app/
 CMD DEBUG=microservicios:* npm start
