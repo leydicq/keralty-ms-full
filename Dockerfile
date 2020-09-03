@@ -10,4 +10,4 @@ COPY package-lock.json /app
 COPY ./ /myapp/
 
 #CMD DEBUG=microservicios:* npm start
-echo Docker ejecutado correctamente
+#echo Docker ejecutado correctamente
