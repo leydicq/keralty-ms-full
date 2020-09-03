@@ -6,9 +6,9 @@ RUN  yum -y install oracle-release-el7 oracle-nodejs-release-el7 && \
      rm -rf /var/cache/yum
 
 WORKDIR /myapp
-COPY package.json /myapp
-COPY package-lock.json /myapp
 COPY ./ /myapp/
 RUN npm install
 
-CMD DEBUG=microservicios:* npm start
+EXPOSE 8080
+
+CMD exec node dist/index.js
