@@ -9,4 +9,5 @@ COPY package-lock.json /app
 #echo Installed app keralty-ms-full
 COPY ./ /myapp/
 
-CMD DEBUG=microservicios:* npm start
+#CMD DEBUG=microservicios:* npm start
+echo Docker ejecutado correctamente
